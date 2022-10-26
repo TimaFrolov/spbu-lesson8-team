@@ -5,15 +5,15 @@ typedef int Error;
 
 typedef struct Tree Tree;
 
-Error makeEmptyTree();
+Tree *makeEmptyTree();
 
 void freeTree(Tree *tree);
 
-Error exists(Tree *tree, Element element);
+bool exists(Tree *tree, Element element);
 
-Error addElement(Tree *tree, Element element);
+Error addElement(Tree **tree, Element element);
 
-Error addElements(Tree *tree, Element *elements, int count);
+Error addElements(Tree **tree, Element *elements, int count);
 
 Error removeElement(Tree *tree, Element element);
 
