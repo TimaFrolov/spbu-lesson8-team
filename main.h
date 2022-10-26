@@ -1,4 +1,4 @@
-#include "stdbool.h"
+#include <stdbool.h>
 
 typedef int Element;
 typedef int Error;
