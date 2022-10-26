@@ -10,19 +10,41 @@ typedef struct Tree
     struct Tree *rightChild;
 } Tree;
 
-Error makeEmptyTree(Tree **treeRef) 
+Tree *makeEmptyTree() 
 {
-    
+    return NULL;
 }
 
 void freeTree(Tree *tree) 
 {
-    
+    if (tree == NULL)
+    {
+        return;
+    }
+
+    freeTree(tree->leftChild);
+    freeTree(tree->rightChild);
+
+    free(tree);
 }
 
-Error exists(Tree *tree, Element element, bool *isExist) 
+bool exists(Tree *tree, Element element) 
 {
-    
+    if (tree == NULL)
+    {
+        return false;
+    }
+
+    if (tree->element == element)
+    {
+        return true;
+    }
+
+    if (element < tree->element) {
+        return exists(tree->leftChild, element);
+    }
+
+    return exists(tree->rightChild, element);
 }
 
 Error addElement(Tree *tree, Element element) 
