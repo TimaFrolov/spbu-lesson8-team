@@ -16,7 +16,7 @@ Tree *makeEmptyTree()
     return NULL;
 }
 
-void freeTree(Tree *tree) 
+void freeTree(Tree *tree)
 {
     if (tree == NULL)
     {
@@ -108,41 +108,37 @@ Error addElements(Tree **tree, Element *elements, int count)
     return 0;
 }
 
-Error removeElement(Tree *tree, Element element) 
+}
+
+Error removeElement(Tree *tree, Element element)
 {
-    
+
 }
 
 Error countOfElements(Tree *tree, int *countRef)
-{
-
-}
-
-Error treeHeight(Tree *tree, int *heightRef) 
-{
-    
-}
-
-Error printPreorder(Tree *tree) 
 {
     if (tree == NULL)
     {
         return 0;
     }
-    printf("%d", tree->element);
+    ++countRef;
     printPreorder(tree->leftChild);
     printPreorder(tree->rightChild);
-    return 0;
+    return *countRef;
+}
+
+Error treeHeight(Tree *tree, int *heightRef)
+{
+
+}
+
+Error printPreorder(Tree *tree)
+{
+
 }
 
 Error printInorder(Tree *tree)
 {
-    if (tree == NULL)
-    {
-        return -2;
-    }
-    printPreorder(tree->leftChild);
-    printf("%d", tree->element);
-    printPreorder(tree->rightChild);
-    return 0;
+
 }
+
