@@ -17,6 +17,16 @@ Tree *makeEmptyTree()
 
 void freeTree(Tree *tree) 
 {
+    if (tree == NULL)
+    {
+        return;
+    }
+
+    freeTree(tree->leftChild);
+    freeTree(tree->rightChild);
+
+    free(tree);
+}
     
 }
 
