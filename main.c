@@ -10,9 +10,9 @@ typedef struct Tree
     struct Tree *rightChild;
 } Tree;
 
-Error makeEmptyTree(Tree **treeRef) 
+Tree *makeEmptyTree() 
 {
-    
+    return NULL;
 }
 
 void freeTree(Tree *tree) 
