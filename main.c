@@ -28,11 +28,23 @@ void freeTree(Tree *tree)
     free(tree);
 }
     
+bool exists(Tree *tree, Element element) 
+{
+    if (tree == NULL)
+    {
+        return false;
 }
 
-Error exists(Tree *tree, Element element, bool *isExist) 
+    if (tree->element == element)
 {
+        return true;
+    }
+
+    if (element < tree->element) {
+        return exists(tree->leftChild, element);
+    }
     
+    return exists(tree->rightChild, element);
 }
 
 Error addElement(Tree *tree, Element element) 
