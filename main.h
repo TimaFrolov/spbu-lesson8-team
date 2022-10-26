@@ -5,7 +5,7 @@ typedef int Error;
 
 typedef struct Tree Tree;
 
-Tree *makeEmptyTree(void);
+Error makeEmptyTree();
 
 void freeTree(Tree *tree);
 
