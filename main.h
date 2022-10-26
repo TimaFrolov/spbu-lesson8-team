@@ -11,9 +11,9 @@ void freeTree(Tree *tree);
 
 Error exists(Tree *tree, Element element, bool *isExist);
 
-Error addElement(Tree *tree, Element element);
+Error addElement(Tree **tree, Element element);
 
-Error addElements(Tree *tree, Element *elements, int count);
+Error addElements(Tree **tree, Element *elements, int count);
 
 Error removeElement(Tree *tree, Element element);
 
