@@ -108,8 +108,6 @@ Error addElements(Tree **tree, Element *elements, int count)
     return 0;
 }
 
-}
-
 Error removeElement(Tree *tree, Element element)
 {
 
